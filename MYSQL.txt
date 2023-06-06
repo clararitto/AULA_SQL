@@ -1,0 +1,275 @@
+Enter password: *******
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.33 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.05 sec)
+
+mysql> create database aula01
+    ->
+    -> mysql>
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mysql>' at line 3
+mysql> creat database
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'creat database' at line 1
+mysql> creat database aula01;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'creat database aula01' at line 1
+mysql> create database aula01;
+Query OK, 1 row affected (0.04 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| aula01             |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.01 sec)
+
+mysql> use aula01;
+Database changed
+mysql> show tables;
+Empty set (0.04 sec)
+
+mysql> CREAT DATABASE curso;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CREAT DATABASE curso' at line 1
+mysql> CREATE DATABASE curso;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> use aula;
+ERROR 1049 (42000): Unknown database 'aula'
+mysql> use curso
+Database changed
+mysql> use curso;
+Database changed
+mysql> create table alunos(codigo int not null auto_increment,
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> create table alunos (
+    -> codigo int not null auto_increment,
+    -> nome varchar(20) not null,
+    -> telefone char(8) not null,
+    -> primary key (codigo)
+    -> );
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> show table;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> show tables;
++-----------------+
+| Tables_in_curso |
++-----------------+
+| alunos          |
++-----------------+
+1 row in set (0.01 sec)
+
+mysql> desc alunos;
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| codigo   | int         | NO   | PRI | NULL    | auto_increment |
+| nome     | varchar(20) | NO   |     | NULL    |                |
+| telefone | char(8)     | NO   |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
+3 rows in set (0.03 sec)
+
+mysql> create database empresa;
+Query OK, 1 row affected (0.07 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| aula01             |
+| curso              |
+| empresa            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+7 rows in set (0.04 sec)
+
+mysql> use empresa
+Database changed
+mysql> create table funcionarios;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table funcionario;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> show table;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> create table funcionarios(
+    -> 1 mario josé varchar(11) not null,
+    ->
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1 mario josé varchar(11) not null,' at line 2
+mysql> creat table funcionarios(
+    -> id_funcionarios int not null auto_increment,
+    -> nome varchar (20) note null,
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'creat table funcionarios(
+id_funcionarios int not null auto_increment,
+nome varc' at line 1
+mysql>  creat table funcionarios(
+    ->     -> id_funcionarios int not null auto_increment,
+    ->     -> id_funcionarios int not null auto_increment]
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'creat table funcionarios(
+    -> id_funcionarios int not null auto_increment,
+  ' at line 1
+mysql> creat table funcionarios(
+    ->
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'creat table funcionarios(' at line 1
+mysql> create table funcionarios(
+    -> id_funcionarios int not null auto_increment,
+    -> nome varchar (20) note null,
+    -> cpf char (11) note null,
+    -> departamento int note null,
+    -> cpf_supervisor char (11) note null,
+    -> salario float note null,
+    -> primary key (id_funcionarios)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'note null,
+cpf char (11) note null,
+departamento int note null,
+cpf_supervisor c' at line 3
+mysql> creat table funcionarios(
+    -> id_funcionarios int not null auto_increment,
+    -> nome varchar (20) note null,
+    -> cpf char (11) not null,
+    -> departamento int note null,
+    -> cpf_supervisor char (11) not
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'creat table funcionarios(
+id_funcionarios int not null auto_increment,
+nome varc' at line 1
+mysql> creat table funcionarios(
+    -> id_funcionarios int not null auto_increment,
+    -> nome varchar (20) not null,
+    -> cpf char (11) not null,
+    -> departamento int note null,
+    -> cpf_supervisor char (11)
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'creat table funcionarios(
+id_funcionarios int not null auto_increment,
+nome varc' at line 1
+mysql> creat table funcionarios(
+    -> id_funcionarios int not null auto_increment,
+    -> nome varchar (20) not null,
+    -> cpf char (11) not null,
+    -> departamento int not null,
+    -> cpf_supervisor char(11),
+    -> salario float not null,
+    -> primary key (id_funcionarios)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'creat table funcionarios(
+id_funcionarios int not null auto_increment,
+nome varc' at line 1
+mysql> create table funcionarios(
+    -> id_funcionarios int not null auto_increment,
+    -> nome varchar (20) not null,
+    -> cpf char (11) not null,
+    -> departamento int not null,
+    -> cpf_supervisor char(11),
+    -> salario float not null,
+    -> primary key (id_funcionarios)
+    -> );
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> insert into funcionarios values(clara,79027308379,
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> desc funcionarios;
++-----------------+-------------+------+-----+---------+----------------+
+| Field           | Type        | Null | Key | Default | Extra          |
++-----------------+-------------+------+-----+---------+----------------+
+| id_funcionarios | int         | NO   | PRI | NULL    | auto_increment |
+| nome            | varchar(20) | NO   |     | NULL    |                |
+| cpf             | char(11)    | NO   |     | NULL    |                |
+| departamento    | int         | NO   |     | NULL    |                |
+| cpf_supervisor  | char(11)    | YES  |     | NULL    |                |
+| salario         | float       | NO   |     | NULL    |                |
++-----------------+-------------+------+-----+---------+----------------+
+6 rows in set (0.03 sec)
+
+mysql> insert into alunos (nome,telefone)
+    -> values('clara','12345678911');
+ERROR 1146 (42S02): Table 'empresa.alunos' doesn't exist
+mysql> show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| aula01             |
+| curso              |
+| empresa            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+7 rows in set (0.01 sec)
+
+mysql> use curso;
+Database changed
+mysql> insert into alunos (nome,telefone)
+    -> values('clara','96784977');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into alunos (nome,telefone)
+    -> values('deb','12345678');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into alunos (nome,telefone)
+    -> values('bina','40028922');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into alunos (nome,telefone)
+    -> values('yuji','99999999');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from alunos;
++--------+-------+----------+
+| codigo | nome  | telefone |
++--------+-------+----------+
+|      1 | clara | 96784977 |
+|      2 | deb   | 12345678 |
+|      3 | bina  | 40028922 |
+|      4 | yuji  | 99999999 |
++--------+-------+----------+
+4 rows in set (0.01 sec)
+
+mysql> select * from alunos where matricula=3;
+ERROR 1054 (42S22): Unknown column 'matricula' in 'where clause'
+mysql> select * from alunos where codigo=3;
++--------+------+----------+
+| codigo | nome | telefone |
++--------+------+----------+
+|      3 | bina | 40028922 |
++--------+------+----------+
+1 row in set (0.00 sec)
+
+mysql>
